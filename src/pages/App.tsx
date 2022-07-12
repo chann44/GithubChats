@@ -1,23 +1,16 @@
-import Features from "../Componets/Features/Index";
-import Footer from "../Componets/Footer/Index";
-import Hero from "../Componets/Hero";
+import ChatArea from "../Componets/chatArea";
 import Navbar from "../Componets/Navbar";
-import WhyKomet from "../Componets/WhyKomet/Index";
-
-
+import Sidebar from "../Componets/sidebar";
 const Home = () => {
   return (
-    <><div className="">
-      <Navbar />
-      <Hero />
-      <WhyKomet />
-      <Features />
-      <Footer />
-      {/* <Aboutus /> */}
-      {/* <Careers /> */}
-    </div>
+    <>
+        <Navbar />
+        <div className="w-full">
+          <Sidebar />
+          <ChatArea />
+        </div>
     </>
-  )
-}
+  );
+};
 
 export default Home;
