@@ -5,7 +5,7 @@ import App from './pages/App'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
-    <div className='w-full min-h-screen text-white bg-[#202222] text-opacity-80 '>
+    <div className='w-full min-h-screen text-white bg-primary text-opacity-80 '>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<App />} />

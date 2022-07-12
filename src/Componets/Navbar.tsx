@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   return (
     <>
-      <nav className="sticky top-0 z-50   backdrop-blur-xl bg-[#2F3136]">
+      <nav className="sticky top-0 z-50   backdrop-blur-xl bg-secondary">
         <div className="flex justify-between items-center w-[80%] m-auto">
           <div className="flex items-center">
             <h1 className="text-3xl">Github Chats</h1>
@@ -38,11 +38,11 @@ const Navbar = () => {
                 </div>
               </div>
               {isDropDownOpen && (
-                <div className="absolute top-12 left-0 z-10 w-full overflow-hidden rounded-b-md bg-[#2F3136] text-white shadow">
+                <div className="absolute top-12 left-0 z-10 w-full overflow-hidden rounded-b-md bg-secondary text-white shadow">
                   {items.map((item) => (
                     <div
                       key={item}
-                      className="flex h-11 w-full cursor-pointer select-none hover:bg-[#4F545C] flex-row justify-between bg-[#2F3136] py-2.5 pl-3 pr-2 text-white "
+                      className="flex h-11 w-full cursor-pointer select-none hover:bg-tercery flex-row justify-between bg-secondary py-2.5 pl-3 pr-2 text-white "
                     >
                       <div className="flex flex-row items-center ">
                         <span className="leading-6">{item}</span>

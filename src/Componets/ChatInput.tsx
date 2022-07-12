@@ -3,7 +3,7 @@ import { AiOutlineSend } from "react-icons/ai";
 const ChatInput = () => {
   return (
     <>
-      <div className="fixed w-full p-2 overflow-hidden bg-[#4F545C] bottom-10">
+      <div className="sticky w-full p-2 overflow-hidden bg-tercery bottom-20">
         <div className="flex items-center justify-between ">
           <input
             type="text"
