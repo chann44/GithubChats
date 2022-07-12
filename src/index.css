@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow: hidden;
+}
+
 h1 {
   font-family: "Bungee Shade", cursive;
   font-family: "Poppins", sans-serif;

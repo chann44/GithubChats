@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
         <Navbar />
-        <div className="w-full">
+        <div className="flex w-full">
           <Sidebar />
           <ChatArea />
         </div>
