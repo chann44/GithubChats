@@ -7,6 +7,15 @@ body {
   overflow: hidden;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 h1 {
   font-family: "Bungee Shade", cursive;
   font-family: "Poppins", sans-serif;

@@ -14,7 +14,7 @@ const ChatInput = () => {
             <AiOutlineSend className="text-3xl w-14" />
           </div>
         </div>
-        <p>Rintifa is typing....</p>
+        <p>chan44 is typing....</p>
       </div>
     </>
   );
