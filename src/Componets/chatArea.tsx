@@ -2,6 +2,7 @@ import { useAppContext } from "../contexts/_context";
 import ChatInput from "./ChatInput";
 import Message from "./message";
 import Modal from "./Modal";
+import ProfileModal from "./ProfileModal";
 import Search from "./search";
 import SearchModal from "./searchModal";
 const ChatArea = () => {
@@ -19,10 +20,12 @@ const ChatArea = () => {
           <SearchModal />
         </Modal> : null
     }
-
+    {
+      showProfileModal ? <Modal >
+        <ProfileModal />
+      </Modal> : null
+    }
   </>
-
-
 
 };
 

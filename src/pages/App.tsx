@@ -5,7 +5,7 @@ import Sidebar from "../Componets/sidebar";
 import { AppContext } from "../contexts/_context";
 const Home = () => {
   const [showSearchModal, setShowSearchModal] = useState(false)
-  const [showProfileModal, setShowProfileModal] = useState(false)
+  const [showProfileModal, setShowProfileModal] = useState(true)
   const sharedState = { showSearchModal, setShowSearchModal, showProfileModal, setShowProfileModal }
   return (
     <>
