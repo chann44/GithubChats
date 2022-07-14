@@ -1,5 +1,6 @@
 import ChatInput from "./ChatInput";
 import Message from "./message";
+import Modal from "./Modal";
 const ChatArea = () => {
   return <>
 
@@ -9,7 +10,7 @@ const ChatArea = () => {
       </div>
       <ChatInput />
     </div>
-
+    <Modal />
   </>
 
 
