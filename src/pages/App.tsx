@@ -11,12 +11,23 @@ import { useCookies } from "react-cookie";
 const Home = () => {
   const [showSearchModal, setShowSearchModal] = useState(false)
   const [showProfileModal, setShowProfileModal] = useState(false)
-  const sharedState = { showSearchModal, setShowSearchModal, showProfileModal, setShowProfileModal }
   const [cookies, setCookie, removeCookie] = useCookies(['jwt-token']);
   const [user, setUser] = useState();
   const search = useLocation().search;
   const token = new URLSearchParams(search).get('token');
   const [isCokkieset, setIsSetCookie] = useState(false)
+  const [loggedin, setLoggedin] = useState(false)
+
+
+  const logoutuser = () => {
+    console.log("delted")
+    removeCookie("jwt-token")
+  }
+
+
+  const sharedState = { showSearchModal, setShowSearchModal, showProfileModal, setShowProfileModal, user, loggedin, setLoggedin, logoutuser }
+
+
 
   const navigate = useNavigate()
   useEffect(() => {
@@ -28,8 +39,8 @@ const Home = () => {
           }
         })
         .then((res: any) => res.data);
-      console.log(usr)
-      setUser(usr);
+      console.log(usr.data)
+      setUser(usr.data);
     })();
   }, []);
 
