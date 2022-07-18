@@ -7,13 +7,16 @@ import { useLocation } from "react-router-dom";
 
 import Sidebar from "../Componets/sidebar";
 import { AppContext } from "../contexts/_context";
+import { useCookies } from "react-cookie";
 const Home = () => {
   const [showSearchModal, setShowSearchModal] = useState(false)
   const [showProfileModal, setShowProfileModal] = useState(false)
   const sharedState = { showSearchModal, setShowSearchModal, showProfileModal, setShowProfileModal }
+  const [cookies, setCookie, removeCookie] = useCookies(['jwt-token']);
   const [user, setUser] = useState();
   const search = useLocation().search;
   const token = new URLSearchParams(search).get('token');
+  const [isCokkieset, setIsSetCookie] = useState(false)
 
   const navigate = useNavigate()
   useEffect(() => {
@@ -21,18 +24,30 @@ const Home = () => {
       const usr = await axios
         .get(`http://localhost:4000/api/me`, {
           headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${cookies["jwt-token"]}`
           }
         })
         .then((res: any) => res.data);
+      console.log(usr)
       setUser(usr);
     })();
   }, []);
 
 
-  // useEffect(() => {
-  //   console.log(token)
-  // }, [token])
+  useEffect(() => {
+    if (token) {
+      setCookie('jwt-token', token)
+      setIsSetCookie(true)
+    }
+  }, [token])
+
+
+  useEffect(() => {
+    if (isCokkieset) {
+      navigate("/")
+      console.log("cookie is set")
+    }
+  }, [isCokkieset])
 
   return (
 
