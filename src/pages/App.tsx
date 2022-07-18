@@ -22,6 +22,7 @@ const Home = () => {
   const logoutuser = () => {
     console.log("delted")
     removeCookie("jwt-token")
+    navigate("/login")
   }
 
 
@@ -55,6 +56,7 @@ const Home = () => {
 
   useEffect(() => {
     if (isCokkieset) {
+    
       navigate("/")
       console.log("cookie is set")
     }

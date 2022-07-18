@@ -2,28 +2,26 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "../contexts/_context";
 
 const Navbar = () => {
-  const { user, logoutuser } = useAppContext()
+  const { user, logoutuser } = useAppContext();
   const items = [
     {
       name: "repos",
-      value: user?.Repos
+      value: user?.Repos,
     },
     {
       name: "followers",
-      value: user?.followers
-    }, {
+      value: user?.followers,
+    },
+    {
       name: "folllowing",
-      value: user?.folllwoing
-    }
-  ]
+      value: user?.folllwoing,
+    },
+  ];
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-
-
-
 
   return (
     <>
-      <nav className="sticky top-0 z-50   backdrop-blur-xl bg-secondary">
+      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-secondary">
         <div className="flex justify-between items-center w-[80%] m-auto">
           <div className="flex items-center">
             <h1 className="text-3xl">Github Chats</h1>
@@ -37,8 +35,8 @@ const Navbar = () => {
                 <div className="flex h-11 w-full cursor-pointer select-none flex-row justify-between  py-2.5 pl-3 pr-2 text-white">
                   <div className="flex flex-row items-center">
                     <img
-                      className="mr-2.5 h-6 w-6 rounded-md bg-gray-300 object-cover"
-                      src="https://cdn.discordapp.com/avatars/782038716289122304/1f58590cb5de6cbfd3b8fbb7d367e3c2.webp?size=32"
+                      className="rounded-full mr-2.5 h-6 w-6  bg-gray-300 object-cover"
+                      src={user?.avtar}
                       alt="chain_icon"
                     />
                     <span className="leading-6">{user?.username}</span>
@@ -63,26 +61,29 @@ const Navbar = () => {
                       className="flex h-11 w-full cursor-pointer select-none hover:bg-tercery flex-row justify-between bg-secondary py-2.5 pl-3 pr-2 text-white "
                     >
                       <div className="flex flex-row items-center ">
-                        <span className="leading-6">{item.name} : {item.value}</span>
+                        <span className="leading-6">
+                          {item.name} : {item.value}
+                        </span>
                       </div>
                     </div>
                   ))}
 
-                  <div
-                    className="flex h-11 w-full cursor-pointer select-none hover:bg-tercery flex-row justify-between bg-secondary py-2.5 pl-3 pr-2 text-white "
-                  >
+                  <div className="flex h-11 w-full cursor-pointer select-none hover:bg-tercery flex-row justify-between bg-secondary py-2.5 pl-3 pr-2 text-white ">
                     <div className="flex flex-row items-center w-full ">
                       <a href={user?.githuburl} target="_blank">
-                        <span className="leading-6 text-green-500">view  profile</span>
+                        <span className="text-green-500 leading-6">
+                          view profile
+                        </span>
                       </a>
                     </div>
                   </div>
 
-                  <div
-                    className="flex h-11 w-full cursor-pointer select-none hover:bg-tercery flex-row justify-between bg-secondary py-2.5 pl-3 pr-2 text-white "
-                  >
-                    <div className="flex flex-row items-center w-full " onClick={logoutuser} >
-                      <span className="leading-6 text-red-500" >log out</span>
+                  <div className="flex h-11 w-full cursor-pointer select-none hover:bg-tercery flex-row justify-between bg-secondary py-2.5 pl-3 pr-2 text-white ">
+                    <div
+                      className="flex flex-row items-center w-full "
+                      onClick={logoutuser}
+                    >
+                      <span className="text-red-500 leading-6">log out</span>
                     </div>
                   </div>
                 </div>
