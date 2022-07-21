@@ -60,7 +60,6 @@ export const AppContextProvder: FC = ({ children }) => {
           Authorization: `Bearer ${cookies['jwt-token']}`
         }
       });
-
       if (usr.status == 200) {
         console.log(usr.data.user.user);
         setUser(usr.data.user.user);

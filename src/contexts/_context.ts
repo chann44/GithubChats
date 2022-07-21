@@ -1,4 +1,5 @@
 import React, { createContext, useContext } from 'react';
+import { Socket } from 'socket.io-client';
 
 interface AppContext {
   showSearchModal: boolean;
@@ -16,6 +17,7 @@ interface AppContext {
   setUser?: React.Dispatch<React.SetStateAction<object>> | VoidFunction | any;
   isCokkieset: boolean;
   setIsSetCookie: React.Dispatch<React.SetStateAction<boolean>> | any;
+  socket: Socket;
 }
 export const AppContext = createContext<Partial<AppContext>>({});
 
